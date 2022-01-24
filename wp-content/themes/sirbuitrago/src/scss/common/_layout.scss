@@ -1,0 +1,47 @@
+@mixin container($size: default){
+	width: 100%;
+	padding: 0 40px;
+	margin: 0 auto;
+
+	@if $size == default {
+		max-width: 1440px;
+	} @else if $size == small {
+		max-width: 1200px;
+	}
+}
+
+.container {
+	@include container;
+}
+
+@mixin grid($columns: 2, $gap: 40, $mobile_margin: 20){
+	$half_gap: math.div($gap, 2);
+
+	> * {
+		width: 100%;
+	}
+
+	> * {
+		margin-bottom: #{$mobile_margin}px;
+	}
+
+	@include bp($m){
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
+		margin: 0 -#{$half_gap}px -#{$gap}px;
+
+		> * {
+			display: block;
+			flex: 0 0 auto;
+			width: percentage(1/$columns);
+			padding: 0 #{$half_gap}px;
+			margin-bottom: #{$gap}px;
+		}
+	}
+}
+
+.grid {
+	@include grid();
+}

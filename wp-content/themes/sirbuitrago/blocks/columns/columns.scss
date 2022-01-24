@@ -1,0 +1,17 @@
+.rpmblock--columns {
+
+	.col-container {
+		@include grid();
+
+		@include bp($m){
+
+			@for $i from 1 through 8 {
+				&.columns--#{$i} {
+					> * {
+						width: percentage(1/$i);
+					}
+				}
+			} // for
+		}
+	}
+}

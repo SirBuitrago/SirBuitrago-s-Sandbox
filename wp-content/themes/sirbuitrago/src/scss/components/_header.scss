@@ -1,0 +1,48 @@
+.site-header {
+	padding: 50px 0;
+
+	&__nav {
+		@include bp($m) {
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		.nav-items {
+
+			@include bp($m) {
+				display: flex;
+				flex-flow: row nowrap;
+			}
+
+			> li {
+				padding: 0 10px;
+			}
+
+			.menu-item-has-children {
+				position: relative;
+
+				&:hover,
+				&:focus-within {
+
+					.sub-menu {
+						opacity: 1;
+						pointer-events: all;
+					}
+				}
+
+				.sub-menu {
+					position: absolute;
+					top: 100%;
+					left: 0;
+					width: 100%;
+					background: #ccc;
+					padding: 10px;
+					opacity: 0;
+					pointer-events: none;
+				}
+			}
+		}
+	}
+}

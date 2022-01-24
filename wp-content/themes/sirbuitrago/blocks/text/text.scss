@@ -1,0 +1,13 @@
+.rpmblock--text {
+
+	.wysiwyg {
+
+		>*:last-child {
+			margin-bottom: 0;
+
+			.btn {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+.rpmblock--banner {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding: 150px 0;
+	color: #fff;
+
+	&__headline {
+		font-size: 58px;
+		text-align: center;
+	}
+}
